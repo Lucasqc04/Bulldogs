@@ -1,4 +1,3 @@
-
 interface FilterBarProps {
   filter: string;
   setFilter: (filter: string) => void;
@@ -9,33 +8,33 @@ const FilterBar: React.FC<FilterBarProps> = ({ filter, setFilter }) => {
     <div className="flex justify-center gap-4 mb-8">
       <button
         onClick={() => setFilter('default')}
-        className={`px-4 py-2 rounded-md font-bold transition-all ${
+        className={`px-5 py-2 rounded-lg font-bebas text-shadow transition-all ${
           filter === 'default'
-            ? 'bg-yellow-500 text-blue-900'
-            : 'bg-blue-800 text-white hover:bg-blue-700'
+            ? 'bg-brand-light text-brand-deepblue border-2 border-brand-lightblue/30'
+            : 'bg-brand-mediumblue/50 text-brand-light hover:bg-brand-mediumblue border border-brand-softblue/30'
         }`}
       >
-        Todos
+        TODOS
       </button>
       <button
         onClick={() => setFilter('low')}
-        className={`px-4 py-2 rounded-md font-bold transition-all ${
+        className={`px-5 py-2 rounded-lg font-bebas text-shadow transition-all ${
           filter === 'low'
-            ? 'bg-yellow-500 text-blue-900'
-            : 'bg-blue-800 text-white hover:bg-blue-700'
+            ? 'bg-brand-light text-brand-deepblue border-2 border-brand-lightblue/30'
+            : 'bg-brand-mediumblue/50 text-brand-light hover:bg-brand-mediumblue border border-brand-softblue/30'
         }`}
       >
-        Menor Preço
+        MENOR PREÇO
       </button>
       <button
         onClick={() => setFilter('high')}
-        className={`px-4 py-2 rounded-md font-bold transition-all ${
+        className={`px-5 py-2 rounded-lg font-bebas text-shadow transition-all ${
           filter === 'high'
-            ? 'bg-yellow-500 text-blue-900'
-            : 'bg-blue-800 text-white hover:bg-blue-700'
+            ? 'bg-brand-light text-brand-deepblue border-2 border-brand-lightblue/30'
+            : 'bg-brand-mediumblue/50 text-brand-light hover:bg-brand-mediumblue border border-brand-softblue/30'
         }`}
       >
-        Maior Preço
+        MAIOR PREÇO
       </button>
     </div>
   );

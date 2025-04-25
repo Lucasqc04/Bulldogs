@@ -1,63 +1,80 @@
 // src/screens/products/arrays.ts
 
+// Importação das imagens
+import camisa1 from '../../assets/products/camisa_azul_branca.jpg';
+import camisa2 from '../../assets/products/camisa_branca_azul.jpg';
+import camisa3 from '../../assets/products/camisa_branca_cinza.jpg';
+import camisa4 from '../../assets/products/camisa_preta_cinza.jpg';
+import moletom1 from '../../assets/products/MOLETOM - LADO_8.png';
+import moletom2 from '../../assets/products/MOLETOM - ANTIGO - FRENTE 1.png';
+import cortavento1 from '../../assets/products/corta.png';
+import caneca1 from '../../assets/products/CANECA -  FATEC SÃO PAULO.png';
+import camisaAmericana1 from '../../assets/products/camisa_americana.jpg';
+import camisaAmericana2 from '../../assets/products/camisa_americana1.jpg';
+
 export const products = [
     {
       id: 1,
-      name: 'Camiseta Oficial 2024',
-      description: 'Camiseta oficial da Atlética FATECSP Bulldogs, 100% algodão.',
-      price: 59.9,
-      image:
-        'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000&auto=format',
+      name: 'CAMISA',
+      description: 'Camisa oficial da Atlética FATECSP Bulldogs, 100% algodão.',
+      price: 60,
+      images: [
+        camisa1,
+        camisa2,
+        camisa3,
+        camisa4
+      ],
       isNew: true,
       installments: true,
+      available: true
     },
     {
       id: 2,
-      name: 'Moletom Bulldogs',
+      name: 'MOLETOM',
       description: 'Moletom com capuz, perfeito para os dias frios.',
-      price: 149.9,
-      image:
-        'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000&auto=format',
+      price: 210,
+      images: [
+        moletom1,
+        moletom2
+      ],
       isBestSeller: true,
       installments: true,
+      available: false
     },
     {
       id: 3,
-      name: 'Caneca Personalizada',
-      description: 'Caneca de cerâmica com o logo da Atlética.',
-      price: 29.9,
-      image:
-        'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=1000&auto=format',
-      installments: false,
+      name: 'CORTA VENTO',
+      description: 'Corta vento leve e resistente com o logo da Atlética.',
+      price: 210,
+      images: [
+        cortavento1
+ 
+      ],
+      installments: true,
+      available: false
     },
     {
       id: 4,
-      name: 'Boné Bulldogs',
-      description: 'Boné aba reta com bordado.',
-      price: 49.9,
-      image:
-        'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=1000&auto=format',
+      name: 'CANECA',
+      description: 'Caneca de cerâmica com o logo da Atlética.',
+      price: 40,
+      images: [
+        caneca1 
+      ],
       installments: false,
+      available: false
     },
     {
       id: 5,
-      name: 'Shorts Esportivo',
-      description: 'Shorts comfortable para prática esportiva.',
-      price: 69.9,
-      image:
-        'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=1000&auto=format',
-      installments: true,
-    },
-    {
-      id: 6,
-      name: 'Kit Calouros',
-      description: 'Kit completo para calouros (camiseta, caneca e adesivos).',
-      price: 99.9,
-      image:
-        'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1000&auto=format',
+      name: 'CAMISA AMERICANA',
+      description: 'Camisa estilo americano com o brasão Bulldogs.',
+      price: 120,
+      images: [
+        camisaAmericana1,
+        camisaAmericana2
+      ],
       isNew: true,
-      isBestSeller: true,
       installments: true,
-    },
+      available: false
+    }
   ];
-  

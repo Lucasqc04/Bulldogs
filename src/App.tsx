@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import HomeScreen from './screens/home/HomeScreen';
 import ProductsScreen from './screens/products/ProductsScreen';
 import PartiesScreen from './screens/partys/PartiesScreen';
+import MembershipScreen from './screens/membership/MembershipScreen';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/products" element={<ProductsScreen />} />
             <Route path="/parties" element={<PartiesScreen />} />
+            <Route path="/membership" element={<MembershipScreen />} />
           </Routes>
         </main>
         <Footer />

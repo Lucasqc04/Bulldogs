@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Music, Timer } from 'lucide-react';
+import { Calendar, MapPin, Clock, Tag } from 'lucide-react';
 
 interface EventCardProps {
   event: any;
@@ -9,64 +9,63 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({ event, onClick }) => {
   return (
     <div
-      className="bg-blue-800/50 backdrop-blur rounded-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-[1.02] cursor-pointer"
+      className="bg-gradient-to-br from-brand-navyblue to-brand-deepblue backdrop-blur rounded-2xl overflow-hidden hover:shadow-xl transition-all transform hover:scale-[1.02] cursor-pointer border border-brand-softblue/20"
       onClick={onClick}
     >
       <div className="md:flex">
-        <div className="md:w-1/3 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent" />
+        <div className="md:w-1/3 relative h-72 md:h-auto overflow-hidden">
           <img
             src={event.image}
             alt={event.name}
-            className="h-64 md:h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
           />
-        </div>
-        <div className="p-8 md:w-2/3">
-          <div className="uppercase tracking-wide text-yellow-500 font-bold mb-2">
+          <div className="absolute inset-0 bg-gradient-to-tr from-brand-navyblue via-transparent to-transparent"></div>
+          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-mediumblue/70 text-brand-light font-medium border border-brand-softblue/40">
             {event.type}
           </div>
-          <h2 className="text-3xl font-extrabold text-white mb-4">
+        </div>
+        <div className="p-8 md:w-2/3">
+          <h2 className="text-4xl font-bebas text-shadow text-brand-light mb-2">
             {event.name}
           </h2>
-          <p className="text-gray-300 mb-6">{event.description}</p>
+          <p className="text-brand-paleblue mb-6 border-l-4 border-brand-lightblue/40 pl-3">
+            {event.description}
+          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div className="flex items-center text-gray-300">
-              <Calendar className="w-5 h-5 mr-2 text-yellow-500" />
-              <span>{event.date}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex items-center text-brand-light">
+              <Calendar className="w-5 h-5 mr-2 text-brand-lightblue" />
+              <span className="text-brand-paleblue">{event.date}</span>
             </div>
-            <div className="flex items-center text-gray-300">
-              <Timer className="w-5 h-5 mr-2 text-yellow-500" />
-              <span>{event.time}</span>
+            <div className="flex items-center text-brand-light">
+              <Clock className="w-5 h-5 mr-2 text-brand-lightblue" />
+              <span className="text-brand-paleblue">{event.time}</span>
             </div>
-            <div className="flex items-center text-gray-300">
-              <MapPin className="w-5 h-5 mr-2 text-yellow-500" />
-              <span>{event.location}</span>
+            <div className="flex items-center text-brand-light">
+              <MapPin className="w-5 h-5 mr-2 text-brand-lightblue" />
+              <span className="text-brand-paleblue truncate">{event.location}</span>
             </div>
-            <div className="flex items-center text-gray-300">
-              <Music className="w-5 h-5 mr-2 text-yellow-500" />
-              <span>{event.attractions}</span>
+            <div className="flex items-center text-brand-light">
+              <Tag className="w-5 h-5 mr-2 text-brand-lightblue" />
+              <span className="text-brand-paleblue">
+                R$ <span className="text-brand-light font-bold">{event.price.toFixed(2)}</span>
+              </span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pt-4 border-t border-brand-softblue/20">
             <div>
-              <span className="text-3xl font-bold text-yellow-500">
-                R$ {event.price.toFixed(2)}
-              </span>
-              <span className="text-gray-300 ml-2">(antecipado)</span>
+              <span className="text-brand-paleblue">Vendas limitadas!</span>
             </div>
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                window.open(
-                  `https://wa.me/5511999999999?text=Olá! Gostaria de comprar ingressos para: ${event.name}`,
-                  '_blank'
-                );
+                onClick();
               }}
-              className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 px-6 py-3 rounded-md font-bold transform hover:scale-105 transition-all flex items-center gap-2"
+              className="group relative overflow-hidden bg-brand-lightblue hover:bg-brand-paleblue text-brand-navyblue font-bold px-6 py-3 rounded-lg flex items-center gap-2 transform hover:scale-105 transition-all shadow-lg"
             >
-              COMPRAR INGRESSO 🎟️
+              <span className="font-bebas tracking-wide">COMPRAR AGORA 🎟️</span>
+              <span className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transform skew-x-[45deg] group-hover:left-[100%] transition-all duration-700"></span>
             </button>
           </div>
         </div>
