@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import SocialLinks from './components/SocialLinks';
 import EventCard from './components/EventCard';

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -9,15 +9,14 @@ export default {
           dark: '#2B2B2B',
           light: '#FDFDFD',
           gray: '#D1D2D5',
-          // Tons estendidos de azul
-          deepblue: '#182475', // Azul mais escuro
+          deepblue: '#182475',
           navyblue: '#1E3178',
-          mainblue: '#283B93', // Tom original
+          mainblue: '#283B93',
           mediumblue: '#3A4DB6',
           softblue: '#5166D7',
           lightblue: '#7D8DE4',
           paleblue: '#A9B2EF',
-          skyblue: '#D2D8F6', // Azul mais claro
+          skyblue: '#D2D8F6',
         },
       },
       fontFamily: {
@@ -43,8 +42,8 @@ export default {
           borderImageSlice: 1,
           borderImageSource: 'linear-gradient(45deg, #283B93, #5166D7)',
         },
-      }
-      addUtilities(newUtilities)
-    }
+      };
+      addUtilities(newUtilities);
+    },
   ],
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import { MessageCircle, ChevronLeft, ChevronRight, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import PurchaseModal from './PurchaseModal';
