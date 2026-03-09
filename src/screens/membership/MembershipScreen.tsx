@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { membershipPlans } from './arrays';
 import MembershipCard from './components/MembershipCard';

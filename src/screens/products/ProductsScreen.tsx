@@ -1,3 +1,5 @@
+'use client';
+
 import{ useState } from 'react';
 import { products as productsData } from './arrays';
 import StoreInfo from './components/StoreInfo';
